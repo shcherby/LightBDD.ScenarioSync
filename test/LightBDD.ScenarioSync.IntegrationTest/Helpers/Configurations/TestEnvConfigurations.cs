@@ -9,10 +9,12 @@ public class TestEnvConfigurations
 
     public TestEnvConfigurations()
     {
+        using FileStream testSettingsStream = File.OpenRead("../../../../test-settings.ignore.json");
         _configuration =
             new ConfigurationBuilder()
                 .AddJsonFile("test-settings.json")
-                .AddJsonFile("test-settings.ignore.json", optional: true).Build();
+                .AddJsonStream(testSettingsStream)
+                .Build();
     }
 
     public AppArguments GetAppArguments()

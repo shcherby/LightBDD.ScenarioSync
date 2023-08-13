@@ -43,7 +43,6 @@
         <None Remove="TestData\Reports\FeaturesReport.xml" />
     </ItemGroup>
     <ItemGroup>
-        <Content Include="..\test-settings.ignore.json" Link="test-settings.ignore.json" CopyToOutputDirectory="PreserveNewest" />
         <None Remove="TestData\ExampleFeaturesReport.xml" />
         <Content Update="TestData\Reports\Example\ExampleFeaturesReport.xml">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

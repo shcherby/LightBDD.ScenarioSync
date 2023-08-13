@@ -5,9 +5,9 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{583A4F22-0204-42F6-AC52-41DEC89496F4}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\build-test.yml = .github\workflows\build-test.yml
 		.github\workflows\push-nuget.yml = .github\workflows\push-nuget.yml
 		README.md = README.md
+		.github\workflows\build.yml = .github\workflows\build.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.Cli", "src\LightBDD.ScenarioSync.Cli\LightBDD.ScenarioSync.Cli.csproj", "{B07F61C0-0988-440B-9015-24461B1049F4}"

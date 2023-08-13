@@ -3,7 +3,7 @@
     "projectUrl": "https://dev.azure.com/organization/project-name",
     "patToken": "personal token with permissions TestManagement write&read, WorkItems write&read", 
     "testPlanId": 123,
-    "reportPath": "../../../../Reports/Example/FeaturesReport.xml",
+    "reportPath": "../../../../../Reports/Example/FeaturesReport.xml",
     "maxParallelism": 5
   }
 }
