@@ -1,6 +1,7 @@
 ﻿using LightBDD.Framework;
 using LightBDD.Framework.Expectations;
 using LightBDD.Framework.Scenarios;
+using LightBDD.ScenarioSync.Extensions.Attributes;
 using LightBDD.XUnit2;
 
 namespace LightBDD.ScenarioSync.TestData.Report.Features;
@@ -13,6 +14,7 @@ FeatureDescription4 FeatureDescription5")]
 public class Primitive_parameters_steps_feature_generate_test_report_for_parser : FeatureFixture
 {
     [Scenario]
+    [Sync(nameof(Primitive_parameters_steps_feature_generate_test_report_for_parser), nameof(Scenario_with_primitive_steps))]
     public void Scenario_with_primitive_steps()
     {
         Runner.WithContext<Generate_test_report_for_parser_context>().RunScenario(
@@ -23,6 +25,7 @@ public class Primitive_parameters_steps_feature_generate_test_report_for_parser 
     }
 
     [Scenario]
+    [Sync(nameof(Primitive_parameters_steps_feature_generate_test_report_for_parser), nameof(Scenario_second_with_primitive_steps))]
     public void Scenario_second_with_primitive_steps()
     {
         Runner.WithContext<Generate_test_report_for_parser_context>().RunScenario(

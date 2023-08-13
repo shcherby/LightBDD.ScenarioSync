@@ -1,4 +1,5 @@
 ﻿using LightBDD.Framework.Scenarios;
+using LightBDD.ScenarioSync.Extensions.Attributes;
 using LightBDD.XUnit2;
 
 namespace LightBDD.ScenarioSync.TestData.Report.Features;
@@ -6,6 +7,7 @@ namespace LightBDD.ScenarioSync.TestData.Report.Features;
 public class Scenarios_with_substeps : FeatureFixture
 {
     [Scenario]
+    [Sync(nameof(Scenarios_with_substeps), nameof(Scenario_with_one_level_sub_steps))]
     public async Task Scenario_with_one_level_sub_steps()
     {
         await Runner.WithContext<Scenario_with_substeps_context>().RunScenarioAsync(
@@ -17,6 +19,7 @@ public class Scenarios_with_substeps : FeatureFixture
     }
     
     [Scenario]
+    [Sync(nameof(Scenarios_with_substeps), nameof(Scenario_with_two_level_sub_steps))]
     public async Task Scenario_with_two_level_sub_steps()
     {
         await Runner.WithContext<Scenario_with_substeps_context>().RunScenarioAsync(

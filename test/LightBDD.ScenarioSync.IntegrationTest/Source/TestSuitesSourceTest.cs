@@ -23,8 +23,8 @@ public class TestSuitesSourceTest
         var testSuite = testSuites.FirstOrDefault(t => t.Name == "Metadata feature generate test report for parser");
         testSuite.Should().NotBeNull();
         testSuite.Path.Should().NotBeNull();
-        testSuite.TestCases.Should().HaveCountGreaterThan(1);
-        var testCase = testSuite.TestCases.FirstOrDefault(t => t.Name == "Scenario automated test metadata");
+        testCases.Should().HaveCountGreaterThan(1);
+        var testCase = testCases.FirstOrDefault(t => t.Name == "Scenario automated test metadata");
         testCase.AutomatedMetadata.Should().NotBeNull();
         testCase.AutomatedMetadata.MethodName.Should().NotBeNullOrEmpty();
         testCase.AutomatedMetadata.StorageName.Should().NotBeNullOrEmpty();
@@ -41,6 +41,7 @@ public class TestSuitesSourceTest
 
     private static AppArguments GetTestArguments()
     {
-        return new TestEnvConfigurations().GetAppArguments();
+        var configOverride = new Dictionary<string, string>() { { "arguments:reportPath", "../../../../Reports/TestData/FeaturesReport.xml" } };
+        return new TestEnvConfigurations(configOverride).GetAppArguments();
     }
 }

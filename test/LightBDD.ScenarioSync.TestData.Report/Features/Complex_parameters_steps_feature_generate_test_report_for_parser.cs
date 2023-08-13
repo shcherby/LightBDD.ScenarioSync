@@ -1,6 +1,7 @@
 ﻿using Example.Domain.Domain;
 using LightBDD.Framework.Parameters;
 using LightBDD.Framework.Scenarios;
+using LightBDD.ScenarioSync.Extensions.Attributes;
 using LightBDD.XUnit2;
 
 namespace LightBDD.ScenarioSync.TestData.Report.Features;
@@ -8,6 +9,7 @@ namespace LightBDD.ScenarioSync.TestData.Report.Features;
 public class Complex_parameters_steps_feature_generate_test_report_for_parser : FeatureFixture
 {
     [Scenario]
+    [Sync(nameof(Complex_parameters_steps_feature_generate_test_report_for_parser), nameof(Scenario_with_table_parameters_steps))]
     public void Scenario_with_table_parameters_steps()
     {
         Runner.WithContext<Generate_test_report_for_parser_context>().RunScenario(
@@ -26,6 +28,7 @@ public class Complex_parameters_steps_feature_generate_test_report_for_parser : 
     }
 
     [Scenario]
+    [Sync(nameof(Complex_parameters_steps_feature_generate_test_report_for_parser), nameof(Scenario_with_tree_parameters_steps))]
     public void Scenario_with_tree_parameters_steps()
     {
         Runner.WithContext<Generate_test_report_for_parser_context>().RunScenario(
@@ -48,6 +51,7 @@ public class Complex_parameters_steps_feature_generate_test_report_for_parser : 
     }
 
     [Scenario]
+    [Sync(nameof(Complex_parameters_steps_feature_generate_test_report_for_parser), nameof(Scenario_with_table_and_tree_parameters_steps))]
     public void Scenario_with_table_and_tree_parameters_steps()
     {
         Runner.WithContext<Generate_test_report_for_parser_context>().RunScenario(

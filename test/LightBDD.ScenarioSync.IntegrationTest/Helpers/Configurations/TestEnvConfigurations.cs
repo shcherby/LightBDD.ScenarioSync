@@ -7,14 +7,19 @@ public class TestEnvConfigurations
 {
     private IConfigurationRoot _configuration;
 
-    public TestEnvConfigurations()
+    public TestEnvConfigurations(IDictionary<string, string>? configsOverride = null)
     {
-        using FileStream testSettingsStream = File.OpenRead("../../../../test-settings.ignore.json");
-        _configuration =
-            new ConfigurationBuilder()
-                .AddJsonFile("test-settings.json")
-                .AddJsonStream(testSettingsStream)
-                .Build();
+        using FileStream testSettingsStream = File.OpenRead("../../../test-settings.ignore.json");
+        var builder = new ConfigurationBuilder()
+            .AddJsonFile("test-settings.json")
+            .AddJsonStream(testSettingsStream);
+
+        if (configsOverride is not null)
+        {
+            builder.AddInMemoryCollection(configsOverride);
+        }
+
+        _configuration = builder.Build();
     }
 
     public AppArguments GetAppArguments()

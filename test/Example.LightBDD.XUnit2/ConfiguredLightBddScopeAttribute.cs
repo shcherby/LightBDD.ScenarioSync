@@ -38,10 +38,10 @@ namespace Example.LightBDD.XUnit2
             char sep = Path.DirectorySeparatorChar;
             configuration
                 .ReportWritersConfiguration()
-                .UpdateFileAttachmentsManager(new FileAttachmentsManager($"..{sep}..{sep}..{sep}..{sep}..{sep}Reports{sep}Example"))
-                .AddFileWriter<HtmlReportFormatter>($"..{sep}..{sep}..{sep}..{sep}..{sep}Reports{sep}Example{sep}FeaturesReport.html")
-                .AddFileWriter<XmlReportFormatter>($"..{sep}..{sep}..{sep}..{sep}..{sep}Reports{sep}Example{sep}FeaturesReport.xml")
-                .AddFileWriter<PlainTextReportFormatter>($"..{sep}..{sep}..{sep}..{sep}..{sep}Reports{sep}Example{sep}{{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}}_FeaturesReport.txt");
+                .UpdateFileAttachmentsManager(new FileAttachmentsManager($"..{sep}..{sep}..{sep}..{sep}Reports{sep}Example"))
+                .AddFileWriter<HtmlReportFormatter>($"..{sep}..{sep}..{sep}..{sep}Reports{sep}Example{sep}FeaturesReport.html")
+                .AddFileWriter<XmlReportFormatter>($"..{sep}..{sep}..{sep}..{sep}Reports{sep}Example{sep}FeaturesReport.xml")
+                .AddFileWriter<PlainTextReportFormatter>($"..{sep}..{sep}..{sep}..{sep}Reports{sep}Example{sep}{{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}}_FeaturesReport.txt");
         }
     }
 }

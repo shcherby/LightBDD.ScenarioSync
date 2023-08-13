@@ -37,8 +37,8 @@ internal class ConfiguredLightBddScopeAttribute : LightBddScopeAttribute
         char sep = Path.DirectorySeparatorChar;
         configuration
             .ReportWritersConfiguration()
-            .UpdateFileAttachmentsManager(new FileAttachmentsManager($"..{sep}..{sep}..{sep}..{sep}..{sep}Reports{sep}TestData"))
-            .AddFileWriter<XmlReportFormatter>($"..{sep}..{sep}..{sep}..{sep}..{sep}Reports{sep}TestData{sep}FeaturesReport.xml")
-            .AddFileWriter<PlainTextReportFormatter>($"..{sep}..{sep}..{sep}..{sep}..{sep}Reports{sep}TestData{sep}{{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}}_FeaturesReport.txt");
+            .UpdateFileAttachmentsManager(new FileAttachmentsManager($"..{sep}..{sep}..{sep}..{sep}Reports{sep}TestData"))
+            .AddFileWriter<XmlReportFormatter>($"..{sep}..{sep}..{sep}..{sep}Reports{sep}TestData{sep}FeaturesReport.xml")
+            .AddFileWriter<PlainTextReportFormatter>($"..{sep}..{sep}..{sep}..{sep}Reports{sep}TestData{sep}{{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}}_FeaturesReport.txt");
     }
 }
