@@ -1,0 +1,14 @@
+global using System.Diagnostics;
+global using LightBDD.ScenarioSync.Core.Entities;
+global using LightBDD.ScenarioSync.Core.App.Commands;
+global using LightBDD.ScenarioSync.Core.Entities.Parameters;
+global using LightBDD.ScenarioSync.Cli;
+global using LightBDD.ScenarioSync.Core.Sync.Source;
+global using LightBDD.ScenarioSync.IntegrationTest.Helpers;
+global using LightBDD.ScenarioSync.IntegrationTest.Helpers.Configurations;
+global using LightBDD.ScenarioSync.Source.Factories;
+global using LightBDD.ScenarioSync.Core.App;
+global using LightBDD.ScenarioSync.PerformanceTest;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.DependencyInjection.Extensions;
+global using Moq;

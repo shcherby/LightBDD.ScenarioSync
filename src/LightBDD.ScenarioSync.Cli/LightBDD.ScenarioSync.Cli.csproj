@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PublishReadyToRun>true</PublishReadyToRun>
+        <PublishSingleFile>true</PublishSingleFile>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21308.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\LightBDD.ScenarioSync.Core\LightBDD.ScenarioSync.Core.csproj" />
+        <ProjectReference Include="..\LightBDD.ScenarioSync.Source\LightBDD.ScenarioSync.Source.csproj" />
+        <ProjectReference Include="..\LightBDD.ScenarioSync.Target.Ado\LightBDD.ScenarioSync.Target.Ado.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>LightBDD.ScenarioSync.ComponentTest</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+
+</Project>

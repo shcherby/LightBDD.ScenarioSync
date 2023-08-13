@@ -1,0 +1,105 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{583A4F22-0204-42F6-AC52-41DEC89496F4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-test.yml = .github\workflows\build-test.yml
+		.github\workflows\push-nuget.yml = .github\workflows\push-nuget.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.Cli", "src\LightBDD.ScenarioSync.Cli\LightBDD.ScenarioSync.Cli.csproj", "{B07F61C0-0988-440B-9015-24461B1049F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.Core", "src\LightBDD.ScenarioSync.Core\LightBDD.ScenarioSync.Core.csproj", "{71C473B1-335A-43BB-A926-510131967A14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.Source", "src\LightBDD.ScenarioSync.Source\LightBDD.ScenarioSync.Source.csproj", "{1F6BA445-CEB5-430C-8E85-C6CB0C4C840C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.Target.Ado", "src\LightBDD.ScenarioSync.Target.Ado\LightBDD.ScenarioSync.Target.Ado.csproj", "{403F9B13-58F2-4C05-AB7F-156E0C8928AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BD10FBBC-F1F7-4AFA-B1B0-70A4BBFA87CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.IntegrationTest", "test\LightBDD.ScenarioSync.IntegrationTest\LightBDD.ScenarioSync.IntegrationTest.csproj", "{1C7A6C40-D7A5-42D7-BBB1-3AB152BE8DC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.TestData.Report", "test\LightBDD.ScenarioSync.TestData.Report\LightBDD.ScenarioSync.TestData.Report.csproj", "{F07EF3D5-3242-4D32-86B9-5EBDB74EF46D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.UnitTest", "test\LightBDD.ScenarioSync.UnitTest\LightBDD.ScenarioSync.UnitTest.csproj", "{C79C1EF1-4CA2-4F1C-896D-067915A89E5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.Extensions", "src\LightBDD.ScenarioSync.Extensions\LightBDD.ScenarioSync.Extensions.csproj", "{3DEB13A1-63C0-4624-8356-090083871693}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Domain", "test\Example.Domain\Example.Domain.csproj", "{A0D69C33-82F8-40D9-B395-5AB67E6CBCDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.LightBDD.XUnit2", "test\Example.LightBDD.XUnit2\Example.LightBDD.XUnit2.csproj", "{C4F020EF-12F4-4DA0-97CA-55914F126285}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestData", "TestData", "{A15F4D07-997E-42B3-B417-8CCBCBE4D906}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightBDD.ScenarioSync.PerformanceTest", "test\LightBDD.ScenarioSync.PerformanceTest\LightBDD.ScenarioSync.PerformanceTest.csproj", "{FE14ED47-8C00-4B31-9220-368EFDF53207}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B07F61C0-0988-440B-9015-24461B1049F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07F61C0-0988-440B-9015-24461B1049F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07F61C0-0988-440B-9015-24461B1049F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07F61C0-0988-440B-9015-24461B1049F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C473B1-335A-43BB-A926-510131967A14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C473B1-335A-43BB-A926-510131967A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C473B1-335A-43BB-A926-510131967A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C473B1-335A-43BB-A926-510131967A14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6BA445-CEB5-430C-8E85-C6CB0C4C840C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6BA445-CEB5-430C-8E85-C6CB0C4C840C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6BA445-CEB5-430C-8E85-C6CB0C4C840C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6BA445-CEB5-430C-8E85-C6CB0C4C840C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{403F9B13-58F2-4C05-AB7F-156E0C8928AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{403F9B13-58F2-4C05-AB7F-156E0C8928AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{403F9B13-58F2-4C05-AB7F-156E0C8928AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{403F9B13-58F2-4C05-AB7F-156E0C8928AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C7A6C40-D7A5-42D7-BBB1-3AB152BE8DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C7A6C40-D7A5-42D7-BBB1-3AB152BE8DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C7A6C40-D7A5-42D7-BBB1-3AB152BE8DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7A6C40-D7A5-42D7-BBB1-3AB152BE8DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F07EF3D5-3242-4D32-86B9-5EBDB74EF46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F07EF3D5-3242-4D32-86B9-5EBDB74EF46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F07EF3D5-3242-4D32-86B9-5EBDB74EF46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F07EF3D5-3242-4D32-86B9-5EBDB74EF46D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C79C1EF1-4CA2-4F1C-896D-067915A89E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79C1EF1-4CA2-4F1C-896D-067915A89E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79C1EF1-4CA2-4F1C-896D-067915A89E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79C1EF1-4CA2-4F1C-896D-067915A89E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DEB13A1-63C0-4624-8356-090083871693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DEB13A1-63C0-4624-8356-090083871693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DEB13A1-63C0-4624-8356-090083871693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DEB13A1-63C0-4624-8356-090083871693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D69C33-82F8-40D9-B395-5AB67E6CBCDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D69C33-82F8-40D9-B395-5AB67E6CBCDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D69C33-82F8-40D9-B395-5AB67E6CBCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D69C33-82F8-40D9-B395-5AB67E6CBCDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F020EF-12F4-4DA0-97CA-55914F126285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F020EF-12F4-4DA0-97CA-55914F126285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F020EF-12F4-4DA0-97CA-55914F126285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F020EF-12F4-4DA0-97CA-55914F126285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE14ED47-8C00-4B31-9220-368EFDF53207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE14ED47-8C00-4B31-9220-368EFDF53207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE14ED47-8C00-4B31-9220-368EFDF53207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE14ED47-8C00-4B31-9220-368EFDF53207}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C7A6C40-D7A5-42D7-BBB1-3AB152BE8DC2} = {BD10FBBC-F1F7-4AFA-B1B0-70A4BBFA87CE}
+		{F07EF3D5-3242-4D32-86B9-5EBDB74EF46D} = {A15F4D07-997E-42B3-B417-8CCBCBE4D906}
+		{C79C1EF1-4CA2-4F1C-896D-067915A89E5F} = {BD10FBBC-F1F7-4AFA-B1B0-70A4BBFA87CE}
+		{A0D69C33-82F8-40D9-B395-5AB67E6CBCDA} = {A15F4D07-997E-42B3-B417-8CCBCBE4D906}
+		{C4F020EF-12F4-4DA0-97CA-55914F126285} = {A15F4D07-997E-42B3-B417-8CCBCBE4D906}
+		{A15F4D07-997E-42B3-B417-8CCBCBE4D906} = {BD10FBBC-F1F7-4AFA-B1B0-70A4BBFA87CE}
+		{FE14ED47-8C00-4B31-9220-368EFDF53207} = {BD10FBBC-F1F7-4AFA-B1B0-70A4BBFA87CE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D34876D-F621-4AFF-8EF2-23E3E13168C7}
+	EndGlobalSection
+EndGlobal
