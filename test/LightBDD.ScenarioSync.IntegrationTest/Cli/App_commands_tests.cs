@@ -10,7 +10,8 @@ public class App_commands_tests
     [Fact]
     public async Task Sync_command_test()
     {
-        AppArguments arguments = new TestEnvConfigurations().GetAppArguments();
+        var configOverride = new Dictionary<string, string>() { { "arguments:reportPath", "../../../../Reports/FeaturesReport.xml" } };
+        AppArguments arguments = new TestEnvConfigurations(configOverride).GetAppArguments();
 
         var app = new AppBootstrap(arguments)
             .WithStartup(new Startup())

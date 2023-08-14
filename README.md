@@ -1,13 +1,17 @@
 ## The Light BDD test framework scenarios Azure DevOps import tool
-
-See latest release details on [What Is New]()  wiki page!
+To learn more, please see LightBDD.ScenarioSync wiki pages, or jump straight to:
+* [Getting Started](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/Getting-started)
+* [Scenario Sync CLI](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/ScenarioSync-CLI)
+* See latest release details on [Releases](https://github.com/khdevnet/LightBDD.ScenarioSync/releases) page
 
 ## Project description
-ScenarioSync for Azure DevOps integrates the BDD process with Azure DevOps by connecting and synchronizing the BDD scenarios with Test Cases 
-and link them to related User Stories or Tasks in Azure DevOps. This way of the development reduce time spend to maintain actuality of scenarios in code and Azure DevOps.
-ScenarioSync uses LightBDD FeaturesReport.xml file as a source and base on it creating Test suites and test cases in Azure DevOps, Test suites and Test cases that not in source removed from Azure DevOps.
+ScenarioSync for Azure DevOps, integrates the BDD process with Azure DevOps by connecting and synchronizing the LightBDD scenarios with Test Cases. 
+ScenarioSync use LightBDD labels with "Relations:" metadata to assign Scenarios to Related Work Items in Azure DevOps.
+ScenarioSync use LightBDD labels with "Sync:" metadata to link Scenario method to Test Case Associated Automation, that relation allow to run Automated Test Cases directly from Azure Devops Test Plan during release.
+This way of the development reduce time spend to maintain actuality of scenarios in code and Azure DevOps.
+ScenarioSync uses LightBDD FeaturesReport.xml file as a source and base on it creating Test suites and Test cases in Azure DevOps, Test suites and Test cases that not in source report removed from Azure DevOps.
 
-### Light BDD to Azure DevOps Test Plan features mapping
+## Light BDD to Azure DevOps Test Plan features mapping
 
 | LightBDD                               | Azure DevOps Test Plan | Notes                                                                       |
 |----------------------------------------|------------------------|-----------------------------------------------------------------------------|
@@ -28,66 +32,40 @@ ScenarioSync uses LightBDD FeaturesReport.xml file as a source and base on it cr
 | Labels (Relations:)                    | Related Work           | Use Label attribute with text 'Relations:'                                  |
 | Labels (Sync:)                         | Associated Automation  | Use Label attribute with text 'Sync:'                                       |
 
-## ScenarioSync CLI 
-### Usage
-```bash
-scenariosync <command> [options]
+## Example
+Use [Getting Started](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/Getting-started) to install and run import tool
+
+### Light BDD Scenario
+Example copied from Demo project [Contacts_management.cs](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Features/Contacts_management.cs).   
+To assign scenario to related User Story or Task [RelationsAttribute](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Core/Attributes/RelationsAttribute.cs) attribute could be used. 
+To include scenario to synchronization use [SyncAttribute](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Core/Attributes/SyncAttribute.cs).
+```csharp
+[Scenario]
+[Label("Test-label")]
+[Relations(234, 235)]
+[Sync(nameof(Contacts_management), nameof(Searching_for_contacts_by_phone))]
+// [Label("Relations:230,235")]
+// [Label("Sync:Demo.LightBDD.XUnit2.dll;Demo.LightBDD.XUnit2.Features.Contacts_management.Searching_for_contacts_by_phone")]
+public void Searching_for_contacts_by_phone()
+{
+    Runner.WithContext<ContactsManagementContext>().RunScenario(
+        c => c.Given_my_contact_book_is_empty(),
+        c => c.Given_I_added_contacts(Table.For(
+            new Contact("John", "111-222-333", "john@hotmail.com"),
+            new Contact("John", "111-303-404", "jo@hotmail.com"),
+            new Contact("Greg", "213-444-444", "greg22@gmail.com"),
+            new Contact("Emily", "111-222-5556", "emily1@gmail.com"),
+            new Contact("Kathy", "111-555-330", "ka321@gmail.com"))),
+        c => c.When_I_search_for_contacts_by_phone_starting_with("111"),
+        c => c.Then_I_should_receive_contacts(Table.ExpectData(
+            b => b.WithInferredColumns()
+                .WithKey(x => x.Name),
+            new Contact("Emily", "111-222-5556", "emily1@gmail.com"),
+            new Contact("John", "111-222-333", "john@hotmail.com"),
+            new Contact("John", "111-303-404", "jo@hotmail.com"),
+            new Contact("Kathy", "111-555-330", "ka321@gmail.com")
+        )));
+}
 ```
-
-### Commands
-| Command     | Notes                                                                                            |
-|-------------|--------------------------------------------------------------------------------------------------|
-| ```push```  | Create or update exist features from LightBDD FeaturesReport.xml to Azure DevOps Root Test Suite |
-| ```clean``` | Delete all Test Suites and Test Cases from Root Azure DevOps Test Suite                          |
-
-### Options
-| Option                 | Notes                                                                                                                                                               |
-|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ```--projectUrl```     | [required] <br/>Url to Azure DevOps project in a format "https://dev.azure.com/organization-name/project-name"                                                      |
-| ```--patToken```       | [required] <br/>Azure DevOps user account "Personal access token"                                                                                                   |
-| ```--testPlanId```     | [required] <br/>Azure DevOps Test Plan Id, defined in URL "https://dev.azure.com/organization-name/project-name/_testPlans/define?planId=1" as "planId" query param |
-| ```--reportFilePath``` | [required] <br/>Path to "FeaturesReport.xml" LightBDD xml report                                                                                                    |
-| ```--rootTestSuite```  | [optional] <br/>Root Test Suite name where Light BDD scenarios will be created. Default value: "LightBddSync"                                                       |
-
-### Examples
-#### Create/update scenarios to Azure Devops 'LightBddSync' Root Test Suite
-```bash
-dotnet scenariosync push --projectUrl "https://dev.azure.com/organization-name/project-name" --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" --testPlanId 5 --reportFilePath "FeaturesReport.xml" 
-```
-
-#### Remove all scenarios the 'LightBddSync' Root TestSuite from Azure Devops
-```bash
-dotnet scenariosync clean --projectUrl "https://dev.azure.com/organization-name/project-name" --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" --testPlanId 5 --reportFilePath "FeaturesReport.xml" 
-```
-
-## Getting started using ScenarioSync
-ScenarioSync is a synchronization tool that can be invoked from the command line.
-This guide shows you step-by-step how the synchronization tool can be configured.
-
-### Preparation
-Install [dotnet 6](https://learn.microsoft.com/en-us/dotnet/core/install/windows?tabs=net70) or higher.
-For setting up ScenarioSync for Azure DevOps, you need a [LightBDD test framework](https://github.com/LightBDD/LightBDD) project and an Azure DevOps project with [Test Plan](https://learn.microsoft.com/en-us/azure/devops/test/overview?view=azure-devops).
-For a synchronization target we use an Azure DevOps project: https://dev.azure.com/organization-name/project-name. 
-(An Azure DevOps project for testing ScenarioSync can be created for free from the [Azure DevOps website](https://azure.microsoft.com/en-us/products/devops/)).
-In our guide, we will use a LightBDD.XUnit2 example that uses LightBDD framework with XUnit.
-The sample project can be found there [GitHub](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo).
-
-### Installation and first sync
-1. Open terminal and clone Demo project from GitHub repository
-```powershell
-git clone https://github.com/khdevnet/LightBDD.ScenarioSync.Demo.git
-```
-2. Open project directory "LightBDD.ScenarioSync.Demo" in terminal and run tests
-```powershell
-dotnet test
-```
-3. Open project directory "LightBDD.ScenarioSync.Demo" in terminal and install ScenarioSync dotnet tool
-```powershell
-dotnet new tool-manifest
-dotnet tool install --local scenariosync
-```
-
-4. Synchronize scenarios with Azure Devops Test Plan
-```powershell
-dotnet scenariosync push --projectUrl "https://dev.azure.com/organization-name/project-name" --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" --testPlanId 5 --reportFilePath "./Reports/FeaturesReport.xml" 
-```
+### Azure DevOps Test Case
+![test-case-demo.png](assets/test-case-demo.png)
