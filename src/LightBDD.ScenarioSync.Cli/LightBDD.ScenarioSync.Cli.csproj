@@ -16,7 +16,7 @@
         <RepositoryUrl>https://github.com/khdevnet/LightBDD.ScenarioSync</RepositoryUrl>
         <PackageProjectUrl>https://github.com/khdevnet/LightBDD.ScenarioSync</PackageProjectUrl>
         <Description>ScenarioSync and LightBDD framework is a good alternative to SpecSync and SpecFlow framework.
-            ScenarioSync for Azure DevOps, integrates the BDD process with Azure DevOps by connecting and synchronizing the LightBDD scenarios with Test Cases.
+            ScenarioSync import scenario to Azure DevOps, integrates the BDD process with Azure DevOps by connecting and synchronizing the LightBDD scenarios with Test Cases.
             ScenarioSync use LightBDD labels with "Relations:" metadata to assign Scenarios to Related Work Items in Azure DevOps.</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <Company>khdevnet</Company>
