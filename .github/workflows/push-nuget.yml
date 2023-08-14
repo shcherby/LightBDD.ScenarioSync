@@ -22,7 +22,7 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore --configuration Release
-    - name: Pack with dotnet botsay
+    - name: Pack tool
       run: dotnet pack src/LightBDD.ScenarioSync.Cli/LightBDD.ScenarioSync.Cli.csproj --output nuget-packages --configuration Release -p:PackageVersion=${{ steps.get_version.outputs.version-without-v  }}
-    - name: Push with dotnet botsay
+    - name: Push tool to nuget
       run: dotnet nuget push nuget-packages/LightBDD.ScenarioSync.Cli.${{ steps.get_version.outputs.version-without-v  }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
