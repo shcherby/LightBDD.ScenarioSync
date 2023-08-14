@@ -40,13 +40,13 @@ scenariosync <command> [options]
 | ```clean``` | Delete all Test Suites and Test Cases from Root Azure DevOps Test Suite                          |
 
 ### Options
-| Option                 | Notes                                                                                                                                                              |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ```--projectUrl```     | [required] <br/>Url to Azure DevOps project in a format "https://dev.azure.com/organization-name/project-name"                                                     |
-| ```--patToken```       | [required] <br/>Azure DevOps user account "Personal access token"                                                                                                  |
-| ```--testPlanId```     | [required] <br/>Azure DevOps Test Plan Id, defined in URL "https://dev.azure.com/organization-name/project-name_testPlans/define?planId=1" as "planId" query param |
-| ```--reportFilePath``` | [required] <br/>Path to "FeaturesReport.xml" LightBDD xml report                                                                                                   |
-| ```--rootTestSuite```  | [optional] Root Test Suite name where Light BDD scenarios will be created. Default value: "LightBddSync"                                                           |
+| Option                 | Notes                                                                                                                                                               |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ```--projectUrl```     | [required] <br/>Url to Azure DevOps project in a format "https://dev.azure.com/organization-name/project-name"                                                      |
+| ```--patToken```       | [required] <br/>Azure DevOps user account "Personal access token"                                                                                                   |
+| ```--testPlanId```     | [required] <br/>Azure DevOps Test Plan Id, defined in URL "https://dev.azure.com/organization-name/project-name/_testPlans/define?planId=1" as "planId" query param |
+| ```--reportFilePath``` | [required] <br/>Path to "FeaturesReport.xml" LightBDD xml report                                                                                                    |
+| ```--rootTestSuite```  | [optional] Root Test Suite name where Light BDD scenarios will be created. Default value: "LightBddSync"                                                            |
 
 ### Examples
 #### Create/update scenarios to Azure Devops 'LightBddSync' Root Test Suite
