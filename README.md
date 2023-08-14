@@ -1,4 +1,4 @@
-## The Light BDD test framework scenarios Azure DevOps import tool
+## The Light BDD test framework scenarios import tool for Azure DevOps 
 To learn more, please see LightBDD.ScenarioSync wiki pages, or jump straight to:
 * [Getting Started](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/Getting-started)
 * [Scenario Sync CLI](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/ScenarioSync-CLI)
