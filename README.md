@@ -33,6 +33,7 @@ ScenarioSync uses LightBDD FeaturesReport.xml file as a source and base on it cr
 ```bash
 scenariosync <command> [options]
 ```
+
 ### Commands
 | Command     | Notes                                                                                            |
 |-------------|--------------------------------------------------------------------------------------------------|
@@ -58,3 +59,13 @@ dotnet scenariosync push --projectUrl "https://dev.azure.com/organization-name/p
 ```bash
 dotnet scenariosync clean --projectUrl "https://dev.azure.com/organization-name/project-name" --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" --testPlanId 5 --reportFilePath "FeaturesReport.xml" 
 ```
+
+## Getting started using ScenarioSync
+ScenarioSync is a synchronization tool that can be invoked from the command line.
+This guide shows you step-by-step how the synchronization tool can be configured.
+
+### Preparation
+For setting up ScenarioSync for Azure DevOps, you need a [LightBDD test framework](https://github.com/LightBDD/LightBDD) project and an Azure DevOps project with [Test Plan](https://learn.microsoft.com/en-us/azure/devops/test/overview?view=azure-devops). 
+
+In our guide, we will use a Example.LightBDD.XUnit2 example that uses LightBDD framework with XUnit.
+The sample project can be downloaded from [GitHub]().
