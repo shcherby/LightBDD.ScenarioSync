@@ -5,10 +5,27 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <PublishReadyToRun>true</PublishReadyToRun>
-        <PublishSingleFile>true</PublishSingleFile>
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     </PropertyGroup>
+    <PropertyGroup>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>scenariosync</ToolCommandName>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/khdevnet/LightBDD.ScenarioSync</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/khdevnet/LightBDD.ScenarioSync</PackageProjectUrl>
+        <Description>ScenarioSync and LightBDD framework is a good alternative to SpecSync and SpecFlow framework.
+            ScenarioSync for Azure DevOps, integrates the BDD process with Azure DevOps by connecting and synchronizing the LightBDD scenarios with Test Cases.
+            ScenarioSync use LightBDD labels with "Relations:" metadata to assign Scenarios to Related Work Items in Azure DevOps.</Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Company>khdevnet</Company>
+        <Authors>khdevnet</Authors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
         <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21308.1" />

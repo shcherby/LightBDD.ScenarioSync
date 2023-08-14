@@ -5,12 +5,13 @@ To learn more, please see LightBDD.ScenarioSync wiki pages, or jump straight to:
 * See latest release details on [Releases](https://github.com/khdevnet/LightBDD.ScenarioSync/releases) page
 
 ## Project description
+ScenarioSync and LightBDD framework is a good alternative to SpecSync and SpecFlow framework.   
 ScenarioSync for Azure DevOps, integrates the BDD process with Azure DevOps by connecting and synchronizing the LightBDD scenarios with Test Cases. 
 ScenarioSync use LightBDD labels with "Relations:" metadata to assign Scenarios to Related Work Items in Azure DevOps.
-ScenarioSync use LightBDD labels with "Sync:" metadata to link Scenario method to Test Case Associated Automation, that relation allow to run Automated Test Cases directly from Azure Devops Test Plan during release.
+Labels with "Sync:" metadata uses to link Scenario method to Test Case Associated Automation, that relation allow to run Automated Test Cases directly from Azure Devops Test Plan during release.
 This way of the development reduce time spend to maintain actuality of scenarios in code and Azure DevOps.
-ScenarioSync uses LightBDD FeaturesReport.xml file as a source and base on it creating Test suites and Test cases in Azure DevOps, Test suites and Test cases that not in source report removed from Azure DevOps.
-
+ScenarioSync works similar to SpecSync but uses LightBDD FeaturesReport.xml file as a source and base on it import Test suites and Test cases to Azure DevOps, Test suites and Test cases that not in source report removed from Azure DevOps.
+  
 ## Light BDD to Azure DevOps Test Plan features mapping
 
 | LightBDD                               | Azure DevOps Test Plan | Notes                                                                       |
@@ -68,4 +69,4 @@ public void Searching_for_contacts_by_phone()
 }
 ```
 ### Azure DevOps Test Case
-![test-case-demo.png](assets/test-case-demo.png)
+![test-case-demo.png](https://github.com/khdevnet/LightBDD.ScenarioSync/raw/main/assets/test-case-demo.png)

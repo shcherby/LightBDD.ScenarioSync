@@ -1141,13 +1141,6 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[6.0.0, )"
         }
       },
-      "lightbdd.scenariosync.data": {
-        "type": "Project",
-        "dependencies": {
-          "LightBDD.ScenarioSync.Core": "[1.0.0, )",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "[6.0.0, )"
-        }
-      },
       "lightbdd.scenariosync.source": {
         "type": "Project",
         "dependencies": {
