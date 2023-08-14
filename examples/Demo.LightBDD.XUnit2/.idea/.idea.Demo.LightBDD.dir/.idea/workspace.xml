@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="542e14cd-e6b5-40d3-bf35-2cfd25983f45" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo.LightBDD.dir/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo.LightBDD.dir/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo.LightBDD.dir/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo.LightBDD.dir/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo.LightBDD.dir/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfiguredLightBddScopeAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Attributes/RelationsAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Attributes/SyncAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo.LightBDD.XUnit2.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/AddressBook.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Contact.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/ContactAddress.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/ContactBook.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/PostalAddress.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Features/ContactsManagementContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Features/Contacts_management.cs" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../src/LightBDD.ScenarioSync.Extensions/Attributes/SyncAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/_projects/LightBDD.ScenarioSync/src/LightBDD.ScenarioSync.Source/Factories/AutomatedTestMetadataFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../src/LightBDD.ScenarioSync.Source/Factories/AutomatedTestMetadataFactory.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectId" id="2TyCN2XChe3p1M96ud8IhMmzKNZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\anton.shcherbyna\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\anton.shcherbyna\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\anton.shcherbyna\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="542e14cd-e6b5-40d3-bf35-2cfd25983f45" name="Changes" comment="" />
+      <created>1692005889585</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692005889585</updated>
+      <workItem from="1692005891177" duration="1501000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add Demo project">
+      <created>1692007104882</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692007104882</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Add Demo project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Demo project" />
+  </component>
+</project>

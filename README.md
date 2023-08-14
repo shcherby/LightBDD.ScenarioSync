@@ -65,7 +65,29 @@ ScenarioSync is a synchronization tool that can be invoked from the command line
 This guide shows you step-by-step how the synchronization tool can be configured.
 
 ### Preparation
-For setting up ScenarioSync for Azure DevOps, you need a [LightBDD test framework](https://github.com/LightBDD/LightBDD) project and an Azure DevOps project with [Test Plan](https://learn.microsoft.com/en-us/azure/devops/test/overview?view=azure-devops). 
+Install [dotnet 6](https://learn.microsoft.com/en-us/dotnet/core/install/windows?tabs=net70) or higher.
+For setting up ScenarioSync for Azure DevOps, you need a [LightBDD test framework](https://github.com/LightBDD/LightBDD) project and an Azure DevOps project with [Test Plan](https://learn.microsoft.com/en-us/azure/devops/test/overview?view=azure-devops).
+For a synchronization target we use an Azure DevOps project: https://dev.azure.com/organization-name/project-name. 
+(An Azure DevOps project for testing ScenarioSync can be created for free from the [Azure DevOps website](https://azure.microsoft.com/en-us/products/devops/)).
+In our guide, we will use a LightBDD.XUnit2 example that uses LightBDD framework with XUnit.
+The sample project can be found there [GitHub](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo).
 
-In our guide, we will use a Example.LightBDD.XUnit2 example that uses LightBDD framework with XUnit.
-The sample project can be downloaded from [GitHub]().
+### Installation and first sync
+1. Open terminal and clone Demo project from GitHub repository
+```powershell
+git clone https://github.com/khdevnet/LightBDD.ScenarioSync.Demo.git
+```
+2. Open project directory "LightBDD.ScenarioSync.Demo" in terminal and run tests
+```powershell
+dotnet test
+```
+3. Open project directory "LightBDD.ScenarioSync.Demo" in terminal and install ScenarioSync dotnet tool
+```powershell
+dotnet new tool-manifest
+dotnet tool install --local scenariosync
+```
+
+4. Synchronize scenarios with Azure Devops Test Plan
+```powershell
+dotnet scenariosync push --projectUrl "https://dev.azure.com/organization-name/project-name" --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" --testPlanId 5 --reportFilePath "./Reports/FeaturesReport.xml" 
+```
