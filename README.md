@@ -46,23 +46,15 @@ scenariosync <command> [options]
 | ```--patToken```       | [required] <br/>Azure DevOps user account "Personal access token"                                                                                                   |
 | ```--testPlanId```     | [required] <br/>Azure DevOps Test Plan Id, defined in URL "https://dev.azure.com/organization-name/project-name/_testPlans/define?planId=1" as "planId" query param |
 | ```--reportFilePath``` | [required] <br/>Path to "FeaturesReport.xml" LightBDD xml report                                                                                                    |
-| ```--rootTestSuite```  | [optional] Root Test Suite name where Light BDD scenarios will be created. Default value: "LightBddSync"                                                            |
+| ```--rootTestSuite```  | [optional] <br/>Root Test Suite name where Light BDD scenarios will be created. Default value: "LightBddSync"                                                       |
 
 ### Examples
 #### Create/update scenarios to Azure Devops 'LightBddSync' Root Test Suite
 ```bash
-dotnet scenariosync push \
-  --projectUrl "https://dev.azure.com/organization-name/project-name" \
-  --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" \
-  --testPlanId  5 \
-  --reportFilePath  "FeaturesReport.xml" 
+dotnet scenariosync push --projectUrl "https://dev.azure.com/organization-name/project-name" --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" --testPlanId 5 --reportFilePath "FeaturesReport.xml" 
 ```
 
 #### Remove all scenarios the 'LightBddSync' Root TestSuite from Azure Devops
 ```bash
-dotnet scenariosync clean \
-  --projectUrl "https://dev.azure.com/organization-name/project-name" \
-  --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" \
-  --testPlanId  5 \
-  --reportFilePath  "FeaturesReport.xml" 
+dotnet scenariosync clean --projectUrl "https://dev.azure.com/organization-name/project-name" --patToken "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq" --testPlanId 5 --reportFilePath "FeaturesReport.xml" 
 ```
