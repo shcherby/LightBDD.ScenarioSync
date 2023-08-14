@@ -1,17 +1,25 @@
-## The Light BDD test framework scenarios import tool for Azure DevOps 
+## The Light BDD test framework scenarios import tool for Azure DevOps
+
 To learn more, please see LightBDD.ScenarioSync wiki pages, or jump straight to:
+
 * [Getting Started](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/Getting-started)
 * [Scenario Sync CLI](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/ScenarioSync-CLI)
 * See latest release details on [Releases](https://github.com/khdevnet/LightBDD.ScenarioSync/releases) page
 
 ## Project description
-ScenarioSync for Azure DevOps, integrates the BDD process with Azure DevOps by connecting and synchronizing the LightBDD scenarios with Test Cases.
+
+ScenarioSync for Azure DevOps, integrates the BDD process with Azure DevOps by connecting and synchronizing the LightBDD
+scenarios with Test Cases.
 This way of the development reduce time spend to maintain actuality of scenarios in code and Azure DevOps.
+
 * ScenarioSync and LightBDD framework is a good alternative to SpecSync and SpecFlow framework.
 * ScenarioSync use LightBDD labels with "Relations:" metadata to assign Scenarios to Related Work Items in Azure DevOps.
-* Labels with "Sync:" metadata uses to link Scenario method to Test Case Associated Automation, that relation allow to run Automated Test Cases directly from Azure Devops Test Plan during release.
-* ScenarioSync works similar to SpecSync but uses LightBDD FeaturesReport.xml file as a source and base on it import Test Suites and Test Cases to Azure DevOps, Test suites and Test Cases that are not in source report removed from Azure DevOps.
-  
+* Labels with "Sync:" metadata uses to link Scenario method to Test Case Associated Automation, that relation allow to
+  run Automated Test Cases directly from Azure Devops Test Plan during release.
+* ScenarioSync works similar to SpecSync but uses LightBDD FeaturesReport.xml file as a source and base on it import
+  Test Suites and Test Cases to Azure DevOps, Test suites and Test Cases that are not in source report removed from
+  Azure DevOps.
+
 ## Light BDD to Azure DevOps Test Plan features mapping
 
 | LightBDD                               | Azure DevOps Test Plan | Notes                                                                       |
@@ -34,12 +42,20 @@ This way of the development reduce time spend to maintain actuality of scenarios
 | Labels (Sync:)                         | Associated Automation  | Use Label attribute with text 'Sync:'                                       |
 
 ## Example
-Use [Getting Started](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/Getting-started) to install and run import tool
+
+Use [Getting Started](https://github.com/khdevnet/LightBDD.ScenarioSync/wiki/Getting-started) to install and run import
+tool
 
 ### Light BDD Scenario
-* Example copied from Demo project [Contacts_management.cs](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Features/Contacts_management.cs).   
-* To assign scenario to related User Story or Task [RelationsAttribute](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Core/Attributes/RelationsAttribute.cs) attribute could be used. 
-* To include scenario to synchronization use [SyncAttribute](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Core/Attributes/SyncAttribute.cs).
+
+* Example copied from Demo
+  project [Contacts_management.cs](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Features/Contacts_management.cs).
+* To assign scenario to related User Story or
+  Task [RelationsAttribute](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Core/Attributes/RelationsAttribute.cs)
+  attribute could be used.
+* To include scenario to synchronization
+  use [SyncAttribute](https://github.com/khdevnet/LightBDD.ScenarioSync.Demo/blob/main/Demo.LightBDD.XUnit2/Core/Attributes/SyncAttribute.cs).
+
 ```csharp
 [Scenario]
 [Label("Test-label")]
@@ -68,5 +84,7 @@ public void Searching_for_contacts_by_phone()
         )));
 }
 ```
+
 ### Azure DevOps Test Case
+
 ![test-case-demo.png](https://raw.githubusercontent.com/khdevnet/LightBDD.ScenarioSync/main/assets/test-case-demo.png)

@@ -1,4 +1,5 @@
 ﻿using LightBDD.ScenarioSync.Core.App;
+using LightBDD.ScenarioSync.Core.App.Config;
 using Microsoft.Extensions.Configuration;
 
 namespace LightBDD.ScenarioSync.IntegrationTest.Helpers.Configurations;
@@ -29,8 +30,8 @@ public class TestEnvConfigurations
 
         return new AppArguments(
             argumentsOptions.ProjectUrl,
-            argumentsOptions.TestPlanId,
             argumentsOptions.PatToken,
+            argumentsOptions.TestPlanId,
             argumentsOptions.ReportPath,
             argumentsOptions.RootTestSuite
         );

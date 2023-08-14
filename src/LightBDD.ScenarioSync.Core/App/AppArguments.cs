@@ -4,7 +4,7 @@ public class AppArguments : IAppArguments
 {
     public const string RootTestSuiteDefault = "LightBddSync";
 
-    public AppArguments(string projectUrl, int testPlanId, string patToken, string reportPath, string rootTestSuite = "")
+    public AppArguments(string projectUrl, string patToken, int testPlanId, string reportPath, string rootTestSuite = "")
     {
         projectUrl = projectUrl ?? throw new ArgumentNullException(nameof(projectUrl));
         ProjectUrl = projectUrl;

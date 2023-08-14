@@ -11,8 +11,8 @@ public class AppArgumentsTest
     {
         var arguments = new AppArguments(
             "https://dev.azure.com/organization/project-name",
-            333,
             "344urpefnuf4skfobpu3fejhlumm7mvo373pxqmwhbbdxabjq",
+            333,
             "FeaturesReport.xml"
         );
 
