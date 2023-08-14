@@ -69,4 +69,4 @@ public void Searching_for_contacts_by_phone()
 }
 ```
 ### Azure DevOps Test Case
-![test-case-demo.png](https://github.com/khdevnet/LightBDD.ScenarioSync/raw/main/assets/test-case-demo.png)
+![test-case-demo.png](https://raw.githubusercontent.com/khdevnet/LightBDD.ScenarioSync/main/assets/test-case-demo.png)
