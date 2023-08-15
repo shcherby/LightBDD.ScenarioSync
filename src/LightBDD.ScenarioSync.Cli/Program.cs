@@ -14,7 +14,7 @@ public class Program
     {
         var rootCommand = new RootCommand("A cli tool for automatically associate automated tests with test cases.");
 
-        Command initCommand = CreateInitSubCommand("init", $"This command will create a ScenarioSync configuration file {AppConfig.FileName}");
+        Command initCommand = CreateSubCommand<InitAppCommand>("init", $"This command will create a ScenarioSync configuration file {AppConfig.FilePath}");
         Command pushCommand = CreateSubCommand<PushAppCommand>("push", "Import scenarios to Azure Devops Test Suite.");
         Command cleanCommand = CreateSubCommand<CleanAppCommand>("clean", "Clean imported scenarios in Azure Devops.");
 
@@ -24,41 +24,13 @@ public class Program
         rootCommand.Invoke(args);
     }
 
-    private static Command CreateInitSubCommand(string subCommand, string description)
-    {
-        var config = new Option<string>("--config", () => AppConfig.FilePath, description: "ScenarioSync config file path") { IsRequired = false };
-        var initCommand = new Command(subCommand, description)
-        {
-            config
-        };
-
-        initCommand.Handler = CommandHandler.Create((string config) =>
-        {
-            new AppConfig(config)
-                .CreateConfig(
-                    new AppArguments(
-                        "https://dev.azure.com/organization-name/project-name",
-                        "personal token with permissions TestManagement write&read, WorkItems write&read",
-                        1,
-                        "./Reports/FeaturesReport.xml")
-                );
-        });
-
-        return initCommand;
-    }
-
     private static Command CreateSubCommand<TCommand>(string subCommand, string description) where TCommand : IAppCommand
     {
-        var config = new Option<string>("--config", () => AppConfig.FilePath, description: "ScenarioSync config file path") { IsRequired = false };
+        var syncCommand = new Command(subCommand, description);
 
-        var syncCommand = new Command(subCommand, description)
+        syncCommand.Handler = CommandHandler.Create(() =>
         {
-            config
-        };
-
-        syncCommand.Handler = CommandHandler.Create((string config) =>
-        {
-            AppArguments arguments = new AppConfig(config).ReadConfig();
+            AppArguments arguments = new AppConfig().ReadConfig();
             Task syncTask = RunSyncCommand<TCommand>(arguments);
 
             syncTask.GetAwaiter().GetResult();

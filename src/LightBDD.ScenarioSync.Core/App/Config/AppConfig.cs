@@ -8,7 +8,7 @@ public class AppConfig
     public static string FilePath = $".{Path.DirectorySeparatorChar}{FileName}";
     public const string FileName = "scenariosync.json.user";
 
-    public AppConfig(string configPath)
+    public AppConfig(string configPath = null)
     {
         _configPath = string.IsNullOrEmpty(configPath) ? FilePath : configPath;
     }

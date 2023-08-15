@@ -7,38 +7,23 @@ namespace LightBDD.ScenarioSync.IntegrationTest.Cli;
 
 public class App_command_line_tests
 {
-    private static char PathSep = Path.DirectorySeparatorChar;
-
     [Fact]
     public void Run_init_command()
     {
         var args = new[]
         {
-            "init",
-            "--config", Path.Combine($"..{PathSep}..{PathSep}..{PathSep}..{PathSep}", AppConfig.FileName)
+            "init"
         };
 
         Program.Main(args);
     }
 
-    [Fact]
-    public void Run_push_no_arguments_command()
-    {
-        var args = new[]
-        {
-            "push"
-        };
-
-        Program.Main(args);
-    }
-    
     [Fact]
     public void Run_push_command()
     {
         var args = new[]
         {
-            "push",
-            "--config", Path.Combine($"..{PathSep}..{PathSep}..{PathSep}..{PathSep}", AppConfig.FileName)
+            "push"
         };
 
         Program.Main(args);
@@ -49,10 +34,9 @@ public class App_command_line_tests
     {
         var args = new[]
         {
-            "clean",
-            "--config", Path.Combine($"..{PathSep}..{PathSep}..{PathSep}..{PathSep}", AppConfig.FileName)
+            "clean"
         };
-    
+
         Program.Main(args);
     }
 }

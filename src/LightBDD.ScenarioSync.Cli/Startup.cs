@@ -10,6 +10,7 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection serviceCollections)
     {
+        serviceCollections.AddScoped<InitAppCommand>();
         serviceCollections.AddScoped<PushAppCommand>();
         serviceCollections.AddScoped<CleanAppCommand>();
         SourceDependencyContainer.RegisterServices(serviceCollections);
