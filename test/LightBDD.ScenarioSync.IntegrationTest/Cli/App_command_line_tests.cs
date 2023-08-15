@@ -25,7 +25,6 @@ public class App_command_line_tests
         {
             "push"
         };
-
         Program.Main(args);
     }
 

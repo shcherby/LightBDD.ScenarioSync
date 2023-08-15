@@ -13,13 +13,7 @@ public class InitAppCommand : IAppCommand
 
     public Task RunAsync(AppArguments arguments)
     {
-        _appConfig.CreateConfig(
-            new AppArguments(
-                "https://dev.azure.com/organization-name/project-name",
-                "personal token with permissions TestManagement write&read, WorkItems write&read",
-                1,
-                "./Reports/FeaturesReport.xml")
-        );
+        _appConfig.CreateConfig(arguments);
 
         return Task.CompletedTask;
     }

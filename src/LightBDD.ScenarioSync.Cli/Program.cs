@@ -14,7 +14,15 @@ public class Program
     {
         var rootCommand = new RootCommand("A cli tool for automatically associate automated tests with test cases.");
 
-        Command initCommand = CreateSubCommand<InitAppCommand>("init", $"This command will create a ScenarioSync configuration file {AppConfig.FilePath}");
+        Command initCommand = CreateSubCommand<InitAppCommand>(
+            "init",
+            $"This command will create a ScenarioSync configuration file {AppConfig.FilePath}",
+            new AppArguments(
+                "https://dev.azure.com/organization-name/project-name",
+                "personal token with permissions TestManagement write&read, WorkItems write&read",
+                1,
+                "./Reports/FeaturesReport.xml")
+        );
         Command pushCommand = CreateSubCommand<PushAppCommand>("push", "Import scenarios to Azure Devops Test Suite.");
         Command cleanCommand = CreateSubCommand<CleanAppCommand>("clean", "Clean imported scenarios in Azure Devops.");
 
@@ -24,13 +32,13 @@ public class Program
         rootCommand.Invoke(args);
     }
 
-    private static Command CreateSubCommand<TCommand>(string subCommand, string description) where TCommand : IAppCommand
+    private static Command CreateSubCommand<TCommand>(string subCommand, string description, AppArguments? initArguments = null) where TCommand : IAppCommand
     {
         var syncCommand = new Command(subCommand, description);
 
         syncCommand.Handler = CommandHandler.Create(() =>
         {
-            AppArguments arguments = new AppConfig().ReadConfig();
+            AppArguments arguments = initArguments ?? new AppConfig().ReadConfig();
             Task syncTask = RunSyncCommand<TCommand>(arguments);
 
             syncTask.GetAwaiter().GetResult();
